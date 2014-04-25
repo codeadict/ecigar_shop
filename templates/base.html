@@ -1,0 +1,187 @@
+{% load cms_tags sekizai_tags %}
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Viaguard Ultra E-Liquid Blend Vape">
+    <meta name="author" content="Dairon Medina - www.gydsystems.com">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+    <title>Viaguard Ultra E-Liquid Blend Vape</title>
+
+    {% render_block "css" %}
+    <!-- Bootstrap core CSS -->
+    <link href="{%  static 'css/bootstrap.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{%  static 'css/main.css' %}" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/smoothscroll.js' %}"></script>
+
+
+  </head>
+
+  <body data-spy="scroll" data-offset="0" data-target="#navigation">
+    {% cms_toolbar %}
+
+    <!-- Fixed navbar -->
+	    <div id="navigation" class="navbar navbar-default navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#"><img src="{% static 'img/logo-top.png' %}" alt="Viaguard"></a>
+	        </div>
+	        <div class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav navbar-right">
+	            <li class="active"><a href="#home" class="smothscroll">Home</a></li>
+	            <li><a href="#desc" class="smothscroll">Liquid Blends</a></li>
+	            <li><a href="#contact" class="smothScroll">Contact Us</a></li>
+                <li><a href="{% url 'product_list' %}" class="cartlink">Buy Now ({{ cart.total_quantity }} items)</a></li>
+                <li class="callus"><a href="tel:+1-877-842-4827">CALL US: +1-877-842-4827</a></li>
+	          </ul>
+	        </div><!--/.nav-collapse -->
+	      </div>
+	    </div>
+
+    {% block main_content %}
+
+
+	<section id="home" name="home"></section>
+	<div id="headerwrap">
+	    <div class="container">
+	    	<div class="row centered">
+	    		<div class="col-lg-12">
+					<h1>Viaguard Ultra E-Liquid Blend Vape</h1>
+					<h3>The Excitement of Smoking is back.</h3>
+					<br>
+	    		</div>
+
+	    		<div class="col-lg-2">
+	    			<h5>{% placeholder base_content %}</h5>
+	    			<p>{% block base_content %}{% endblock %}The most flavourful and advanced E-vape based on extensive scientific research by Viaguard laboratories and formulated for your pleasure and safety.</p>
+	    		</div>
+	    		<div class="col-lg-8">
+	    			<img class="img-responsive" src="{% static 'img/1.gif' %}" alt="">
+	    		</div>
+	    		<div class="col-lg-2">
+	    			<p>Our goal was to develop products that provide the satisfaction and mood elevation of tobacco, or the euphoria of marijuana. Viaguard Ultra E-liquid blends are formulated on the flavour base of Virginia and imported Turkish tobacco.</p>
+	    		</div>
+	    	</div>
+	    </div> <!--/ .container -->
+	</div><!--/ #headerwrap -->
+
+
+	<section id="desc" name="desc"></section>
+	<!-- INTRO WRAP -->
+	<div id="intro">
+		<div class="container">
+			<div class="row centered">
+				<h1>FEATURING</h1>
+				<br>
+				<br>
+				<div class="col-lg-4">
+					<img src="{% static 'img/intro03.png' %}" alt="">
+					<h3>Viaguard’s Cannabinoil</h3>
+					<p>Replicates the experience of marijuana, allows you to get the charge without being charged. The smoking experience that sensually replicates cannabinoids and yet is cannabis-free and legal.</p>
+				</div>
+                <div class="col-lg-4">
+					<img src="{% static 'img/intro04.png' %}" alt="">
+					<h3>Viaguard E.passion</h3>
+					<p>Made with natural sex pheromones that play an important role in Male/Female attraction.</p>
+				</div>
+                <div class="col-lg-4">
+					<img src="{% static 'img/intro01.png' %}" alt="">
+					<h3>Viaguard's Weight E-Vape</h3>
+					<p>Enjoy e-liquids while losing weight. Weight E-Vape is a scientific blend of Garcinia Cambogia, Green Tea extract and many other ingredients known to promote weight loss.</p>
+				</div>
+			</div>
+			<br>
+	    </div> <!--/ .container -->
+	</div><!--/ #introwrap -->
+
+    {% endblock main_content %}
+
+
+	<section id="contact" name="contact">
+	<div id="footerwrap">
+		<div class="container">
+			<div class="col-lg-5">
+				<h3>Viaguard Inc.</h3>
+				<a href="http://www.evapeultra.comm">www.evapeultra.com</a>
+				<p>
+				1232 Kingston Road (and Victoria Park) Toronto,<br/>
+				Toronto, Ontario<br/>
+				M1N 1P3<br/>
+				Canada
+				</p>
+				<p>Tel.: +1-877-842-4827</p>
+
+                <p>
+                    <b>We Accept:</b>
+                    <img class="hidden-xs hidden-sm hidden-md" src="{% static 'img/cards.png' %}">
+                </p>
+
+			</div>
+
+			<div class="col-lg-7">
+				<h3>Contact Us</h3>
+				<br>
+				<form id="contactusform" role="form" action="#contact" method="post">
+                  {% csrf_token %}
+				  <div class="form-group">
+				    <label for="id_name">Your Name</label>
+				    <input type="name" name="id_name" class="form-control" id="id_name" placeholder="Enter your full name or company" required>
+				  </div>
+				  <div class="form-group">
+				    <label for="id_mail">Your e-Mail</label>
+				    <input type="email" name="id_mail" class="form-control" id="id_mail" placeholder="Enter your e-Mail: ex. somesmoker@cigar.com" required>
+				  </div>
+				  <div class="form-group">
+				  	<label for="id_msg">Your Message</label>
+				  	<textarea name="id_msg" class="form-control" name="Message" id="id_msg" rows="3" placeholder="Fill your comments or suggestion." required></textarea>
+				  </div>
+				  <br>
+                  <div class="row">
+                      <button type="submit" class="btn btn-large btn-success col-lg3" id="send-contact">SEND NOW</button>
+                      <div id="messages" class="col-lg-9"></div>
+                  </div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	<div id="c">
+		<div class="container">
+			<div class="row">
+			<div class="col-lg-8 hidden-xs">
+
+			</div>
+			<div class="col-lg-4">
+			<p>Copyright &copy; 2014 <a href="http://www.viaguard.com">Viaguard Inc.</a></p>
+			</div>
+			</div>
+		</div>
+	</div>
+        </section>
+
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'js/viaguard.js' %}"></script>
+	<script>
+	$('.carousel').carousel({
+	  interval: 3500
+	})
+	</script>
+    {% render_block "js" %}
+  </body>
+</html>

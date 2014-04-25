@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load i18n %}
+
+{% block main_content %}
+
+    <div id="productswrap">
+        <div class="container">
+            <div class="row">
+                    {% block topbody %}{% endblock %}
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    {% block body %}
+                    {% endblock %}
+                </div>
+                <div id="sidebar" class="col-lg-4">
+                    {% block rsidebar %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

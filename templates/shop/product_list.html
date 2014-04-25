@@ -1,0 +1,38 @@
+{% extends "shop/base.html" %}
+{% load url from future %}
+{%  load static from staticfiles %}
+
+{% block topbody %}
+    <div class="col-lg-12">
+        <p>Choose your products and add it to your Shopping Cart, then proceed to Checkout in 3 simple steps.</p>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <div class="content-box-inset">
+        <h1>Our Products:</h1>
+        <ul class="row products discover-list cf col-lg-12">
+            {% for object in object_list %}
+            <li class="col-lg-4">
+                <a href="#" class="image"><img src="{% static 'img/item-02.png' %}" width="228" height="228"
+                                               alt="{{ object.get_name }}"></a>
+
+                <div class="details">
+                    <a href="{% url 'product_detail' object.slug %}" class="product">{{ object.get_name }}</a>
+                    <strong class="price">${{ object.unit_price }} <span class="currency">USD</span></strong>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+{% block rsidebar %}
+    <div class="box">
+        <h2>Your Cart</h2>
+
+        <div class="row text-center">
+            <button id="checkout" class="btn btn-large btn-success col-lg3" type="submit">CHECKOUT</button>
+        </div>
+    </div>
+{% endblock %}
