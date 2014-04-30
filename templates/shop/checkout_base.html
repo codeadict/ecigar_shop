@@ -1,0 +1,40 @@
+{% extends "shop/base.html" %}
+
+{% block body %}
+  <div class="checkout-progress progress-3-steps {% block current-step %}{% endblock %}">
+          <ol class="steps">
+            <li class="step-cart step-completed">Review Products</li>
+            <li class="step-delivery step-active">Delivery Information</li>
+            <li class="step-payment">Payment</li>
+            <!-- <li class="step-review">Review order</li> -->
+          </ol>
+  </div>
+
+  {% block checkout-content %}{% endblock %}
+
+{% endblock %}
+
+{% block rsidebar %}
+<div class="box box-blue">
+    <h2>How Checkout Works</h2>
+
+    <div class="howto-box">
+
+        <ul class="howto-list">
+            <li>
+                <p> Buying your Evape Ultra products is pretty simple just add the address to send you the package.
+                    Select your payment method and enter the data requested and its done. In a short time you will enjoy
+                    the pleasure of smoking Evape Ultra!</p>
+            </li>
+            <li>
+                <p>Mailing cost to North America $6.00 – International orders $12.00 for any order.<br>
+                   <br>Courier cost to North America $19.00 – International orders $30.00 for any order.</p>
+            </li>
+            <li>
+                <p>(You are supplied empty 10 mL carry bottles with 100mL bottle orders)</p>
+            </li>
+        </ul>
+
+    </div>
+</div>
+{% endblock %}

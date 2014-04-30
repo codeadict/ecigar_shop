@@ -31,7 +31,7 @@
     {% cms_toolbar %}
 
     <!-- Fixed navbar -->
-	    <div id="navigation" class="navbar navbar-default navbar-fixed-top">
+	    <div id="footer" class="navbar navbar-default navbar-fixed-top">
 	      <div class="container">
 	        <div class="navbar-header">
 	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -39,14 +39,14 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	          </button>
-	          <a class="navbar-brand" href="/#home"><img src="{% static 'img/logo-top.png' %}" alt="Viaguard"></a>
+	          <a class="navbar-brand" href="#"><img src="{% static 'img/logo-top.png' %}" alt="Viaguard"></a>
 	        </div>
 	        <div class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav navbar-right">
-	            <li class="{% block homeact %}active{% endblock %}"><a href="/#home" class="smothscroll">Home</a></li>
-	            <li><a href="/#desc" class="">Liquid Blends</a></li>
-	            <li><a href="/#contact" class="smothScroll">Contact Us</a></li>
-                <li class="{% block cartact %}{% endblock %}"><a href="{% url 'product_list' %}" class="cartlink">Buy Now ({{ cart.total_quantity }} items)</a></li>
+	            <li class="active"><a href="#home" class="smothscroll">Home</a></li>
+	            <li><a href="#desc" class="smothscroll">Liquid Blends</a></li>
+	            <li><a href="#contact" class="smothScroll">Contact Us</a></li>
+                <li><a href="{% url 'product_list' %}" class="cartlink">Buy Now ({{ cart.total_quantity }} items)</a></li>
                 <li class="callus"><a href="tel:+1-877-842-4827">CALL US: +1-877-842-4827</a></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
@@ -54,6 +54,8 @@
 	    </div>
 
     {% block main_content %}
+
+
 	<section id="home" name="home"></section>
 	<div id="headerwrap">
 	    <div class="container">

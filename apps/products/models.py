@@ -4,6 +4,7 @@
 from django.db import models
 from django.utils.translation import gettext as _
 from shop.models.productmodel import Product
+from shop.util.fields import CurrencyField
 
 
 def determine_upload_path(instance, filename):
@@ -34,6 +35,9 @@ class Liquid(Product):
 
 class Vape(Product):
     description = models.TextField(_('Description'), null=True, blank=True)
+    image = models.ImageField(upload_to=determine_upload_path, default='',
+                              blank=True, null=True, verbose_name='Picture', help_text='Product picture')
+    price_usa = CurrencyField(verbose_name=_('Unit price USA'))
 
     class Meta:
         pass

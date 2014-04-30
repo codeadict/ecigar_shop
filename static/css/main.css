@@ -213,7 +213,7 @@ label.error {
     padding: 1px 5px;
 }
 
-#productswrap{
+#productswrap {
     padding-top: 60px;
 }
 
@@ -225,20 +225,20 @@ label.error {
     padding: 15px;
 }
 
-div.box h2{
-    margin:0;
-    padding:0;
+div.box h2 {
+    margin: 0;
+    padding: 0;
     font-weight: bold;
-    color:#fff;
-    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
     background: url('../img/header-green.png');
-    font-size:15px;
+    font-size: 15px;
     font-weight: 400;
-    padding:10px 15px 5px 15px;
+    padding: 10px 15px 5px 15px;
     line-height: 20px;
     margin: -15px -15px 15px;
     border-radius: 3px 3px 0 0;
-  }
+}
 
 .content-box-inset {
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0.1);
@@ -256,41 +256,107 @@ div.box h2{
     padding: 10px;
 }
 
-ul.discover-list{
+ul.discover-list {
     list-style: outside none;
 }
 
-ul.discover-list li{
-     height: 302px;
-     margin:0 9px 10px 0;
-     padding: 0;
-     overflow: hidden;
-     -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2) inset;
+ul.discover-list li {
+    height: 302px;
+    margin: 0 9px 10px 0;
+    padding: 0;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2) inset;
     -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2) inset;
     -ms-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2) inset;
     -o-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2) inset;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.2) inset;
-   }
-
-ul.discover-list li:nth-child(4n){
-       margin-right: 0;
 }
 
-ul.discover-list li .product{
-       display: block;
-     }
+ul.discover-list li:nth-child(4n) {
+    margin-right: 0;
+}
 
+ul.discover-list li .product {
+    display: block;
+}
 
-ul.discover-list li a.image img{
-     border-radius: 3px 3px 0 0;
-   }
+ul.discover-list li a.image img {
+    border-radius: 3px 3px 0 0;
+}
 
-ul.discover-list li .details{
-     padding: 10px 10px 10px 40px;
-     width: 228px;
-     position:relative;
-     opacity:1;
-     background: #fff;
-     border-radius: 0 0 3px 3px;
-     height:74px;
-   }
+ul.discover-list li .details {
+    padding: 10px 10px 10px 40px;
+    width: 228px;
+    position: relative;
+    opacity: 1;
+    background: #fff;
+    border-radius: 0 0 3px 3px;
+    height: 74px;
+}
+
+.checkout-progress {
+    position: relative;
+    border-radius: 3px;
+    height: 132px;
+    margin: 0 0 20px 0;
+    background: #fff;
+    padding: 20px 0;
+}
+
+.checkout-progress.step-cart ol {
+    background: #fff url('../img/checkout-3steps.png') 0px -0px no-repeat;
+}
+
+.checkout-progress.step-delivery ol {
+    background: #fff url('../img/checkout-3steps.png') 0 -96px no-repeat;
+}
+
+.checkout-progress.step-payment ol {
+    background: #fff url('../img/checkout-3steps.png') 0 -193px no-repeat;
+}
+
+.checkout-progress.step-review ol {
+    background: #fff url('../img/checkout-3steps.png') 0 -289px no-repeat;
+}
+
+.checkout-progress ol {
+    list-style: none;
+    margin: 0;
+    height: 100px;
+    width: 100%;
+    padding: 0;
+    position: relative;
+}
+
+.checkout-progress ol li {
+    position: absolute;
+    top: 0px;
+    font-weight: 600;
+    color: #727272;
+    text-transform: uppercase;
+}
+
+.checkout-progress ol li.step-cart {
+    left: 40px;
+}
+
+.checkout-progress ol li.step-delivery {
+    left: 300px;
+}
+
+.checkout-progress ol li.step-payment {
+    left: 610px;
+}
+
+.checkout-progress ol li.step-review {
+    left: 585px;
+}
+
+.checkout-progress.step-completed, .checkout-progress.step-active {
+    color: #6BB4E1;
+}
+
+ul.howto-list{
+    list-style: outside none;
+    padding: 0px;
+}
